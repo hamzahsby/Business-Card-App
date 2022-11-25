@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -33,6 +34,22 @@ class MainActivity : ComponentActivity() {
 
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun BusinessCardScreen() {
+    Column(
+        modifier = Modifier
+            .background(color = Color(0xFF002d3f)),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row(Modifier.weight(1f)) {
+            IdentityBlock()
+        }
+        Row(Modifier.weight(1f)) {
+            ContactDetailBlock()
         }
     }
 }
@@ -82,7 +99,6 @@ private fun ContactDetailBlock() {
                 colorFilter = ColorFilter.tint(Color(0xFF3ddc84)),
                 modifier = Modifier
                     .size(width = 20.dp, height = 20.dp)
-
             )
             val shareIkon = painterResource(R.drawable.baseline_share_black_20)
             Image(
@@ -116,6 +132,6 @@ private fun ContactDetailBlock() {
 @Composable
 fun DefaultPreview() {
     KartuNamaTheme {
-
+        BusinessCardScreen()
     }
 }
