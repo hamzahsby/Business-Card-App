@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -61,6 +62,53 @@ private fun IdentityBlock() {
             fontSize = 15.sp,
             fontWeight = FontWeight.Bold
         )
+    }
+}
+
+@Composable
+private fun ContactDetailBlock() {
+    Row {
+        Column(modifier = Modifier
+            .fillMaxHeight(1f)
+            .weight(1f)
+            .padding(start = 55.dp, bottom = 45.dp),
+            verticalArrangement = Arrangement.Bottom
+        ) {
+
+            val phoneIkon = painterResource(R.drawable.baseline_phone_black_20)
+            Image(
+                painter = phoneIkon,
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(Color(0xFF3ddc84)),
+                modifier = Modifier
+                    .size(width = 20.dp, height = 20.dp)
+
+            )
+            val shareIkon = painterResource(R.drawable.baseline_share_black_20)
+            Image(
+                painter = shareIkon,
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(Color(0xFF3ddc84)),
+                modifier = Modifier.size(width = 20.dp, height = 20.dp)
+            )
+            val emailIkon = painterResource(R.drawable.baseline_email_black_20)
+            Image(
+                painter = emailIkon,
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(Color(0xFF3ddc84)),
+                modifier = Modifier.size(width = 20.dp, height = 20.dp)
+            )
+        }
+
+        Column(modifier = Modifier
+            .fillMaxHeight(1f)
+            .weight(3f)
+            .padding(bottom = 45.dp),
+            verticalArrangement = Arrangement.Bottom) {
+            Text(text = "+11(123) 444 555 666", color = Color.White)
+            Text(text = "@AndroidDev", color = Color.White)
+            Text(text = "jen.doe@android.com", color = Color.White)
+        }
     }
 }
 
