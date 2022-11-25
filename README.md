@@ -1,2 +1,3 @@
-# Business Card  
-Project: Basic Android Kotlin Unit 1
+# Business Card App  
+## Android Basics Compose Unit-1  
+Project: Create a business card app
